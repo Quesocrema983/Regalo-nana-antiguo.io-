@@ -1,23 +1,40 @@
-const rain = document.getElementById("rain");
+const emojiContainer = document.getElementById("emoji-rain");
 
 function createEmoji() {
   const emoji = document.createElement("div");
+  emoji.textContent = "📷";
 
-  emoji.classList.add("emoji");
-  emoji.innerText = "📷";
+  // Tamaño aleatorio
+  const size = Math.random() * 24 + 20;
+  emoji.style.fontSize = size + "px";
 
+  // Posición horizontal aleatoria
+  emoji.style.position = "absolute";
   emoji.style.left = Math.random() * 100 + "vw";
-  emoji.style.fontSize = (Math.random() * 20 + 20) + "px";
+  emoji.style.top = "-50px";
 
-  const duration = Math.random() * 5 + 5;
+  // Velocidad de caída
+  const duration = Math.random() * 5 + 5; // entre 5 y 10 segundos
+  emoji.style.animation = `fall ${duration}s linear`;
 
-  emoji.style.animationDuration = duration + "s";
+  emojiContainer.appendChild(emoji);
 
-  rain.appendChild(emoji);
-
+  // Eliminar cuando termine la animación
   setTimeout(() => {
     emoji.remove();
   }, duration * 1000);
 }
 
+// Crear emojis constantemente
 setInterval(createEmoji, 300);
+
+/* Animación */
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+`;
+document.head.appendChild(style);
