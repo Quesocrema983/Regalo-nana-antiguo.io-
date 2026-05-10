@@ -1,100 +1,78 @@
-body {
+/* Reset básico */
+* {
   margin: 0;
-  overflow: hidden;
-  background: #7ec8ff;
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  position: relative;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* lluvia */
-#rain {
+/* Fondo general */
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #7ec8ff; /* azul bonito */
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden; /* importante para la lluvia de emojis */
+}
+
+/* Contenedor de la lluvia de emojis */
+#emoji-rain {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  pointer-events: none; /* no interfiere con botones */
+  z-index: 1;
 }
 
-/* título */
-h1 {
-  text-align: center;
-  color: white;
-  margin-top: 30px;
-  font-size: clamp(28px, 6vw, 50px);
-  z-index: 2;
-  position: relative;
-}
-
-/* botón carta */
-.top-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  text-align: center;
-  z-index: 2;
-}
-
-.top-button p {
-  color: white;
-  margin: 0;
+/* Etiquetas de texto */
+.label {
   font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-transform: lowercase;
 }
 
-.top-button button {
-  font-size: 45px;
-  background: none;
-  border: none;
-}
-
-/* centro */
-.center-content {
+/* Botón central */
+.center-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 2;
+  z-index: 3;
 }
 
-.center-content p {
-  color: white;
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.center-content button {
-  font-size: 90px;
+#play-btn {
+  font-size: 64px;
   background: none;
   border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* emojis */
-.emoji {
+#play-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Botón esquina (carta) */
+.corner-button {
   position: absolute;
-  animation: fall linear forwards;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+  z-index: 3;
 }
 
-@keyframes fall {
-  from {
-    transform: translateY(-10vh);
-  }
-
-  to {
-    transform: translateY(110vh);
-  }
-      .games {
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.games button {
-  width: 80px;
-  height: 80px;
-  font-size: 40px;
-  border-radius: 20px;
+#letter-btn {
+  font-size: 36px;
+  background: none;
   border: none;
-  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#letter-btn:hover {
+  transform: scale(1.1);
 }
