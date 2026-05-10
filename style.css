@@ -131,3 +131,38 @@ body {
   gap: 40px;
   z-index: 3;
 }
+/* Pantalla de contexto */
+.context-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 3;
+}
+
+.context-text {
+  font-size: 28px; /* texto grande como pediste */
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.start-game-btn {
+  font-size: 24px;
+  padding: 16px 40px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.start-game-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.4);
+}
