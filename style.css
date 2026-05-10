@@ -88,3 +88,36 @@ body {
   z-index: 3;
   pointer-events: none;
 }
+/* Contenedor de minijuegos */
+#minigames {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  z-index: 3;
+}
+
+/* Botones de minijuegos */
+.game-btn {
+  font-size: 60px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.game-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Oculto */
+.hidden {
+  display: none;
+}
