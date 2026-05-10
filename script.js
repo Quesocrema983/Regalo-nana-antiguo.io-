@@ -38,3 +38,11 @@ style.innerHTML = `
 }
 `;
 document.head.appendChild(style);
+const playBtn = document.getElementById("play-btn");
+const minigames = document.getElementById("minigames");
+const centerContainer = document.querySelector(".center-container");
+
+playBtn.addEventListener("click", () => {
+  centerContainer.style.display = "none";
+  minigames.classList.remove("hidden");
+});
